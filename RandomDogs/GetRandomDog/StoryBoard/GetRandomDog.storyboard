@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Get Random DogsVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="GetRandomDogsVC" id="Y6W-OH-hqX" customClass="GetRandomDogsVC" customModule="RandomDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4av-nf-JsG" customClass="LazyImageView" customModule="RandomDogs" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="374" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="iFk-Er-Enk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-mX-O7w">
+                                <rect key="frame" x="89" y="511" width="236" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wV1-u8-KJG"/>
+                                    <constraint firstAttribute="width" constant="236" id="xwR-Eh-jZg"/>
+                                </constraints>
+                                <state key="normal" title="Get Random Dogs"/>
+                                <connections>
+                                    <action selector="didTapToGenerateDogs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UUi-G2-GPI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qZa-mX-O7w" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="78" id="1vg-k5-0S6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4av-nf-JsG" secondAttribute="trailing" constant="20" id="3ED-5n-nlC"/>
+                            <constraint firstItem="qZa-mX-O7w" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="p1y-YC-kED"/>
+                            <constraint firstItem="4av-nf-JsG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="tU0-le-ghi"/>
+                            <constraint firstItem="4av-nf-JsG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="xRM-kV-dLx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="randomDogsImgView" destination="4av-nf-JsG" id="gro-gs-SaF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="78.348214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HOJ-ki-LUj">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="QQ6-MD-RVd">
+            <objects>
+                <navigationController id="HOJ-ki-LUj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xx9-2n-cLM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ggT-a6-Ghv" kind="relationship" relationship="rootViewController" id="tB5-ba-hmD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4S-UU-vrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2243" y="-316"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9aI-Xq-eFB">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="ggT-a6-Ghv" customClass="ViewController" customModule="RandomDogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bDe-Pp-eWv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFQ-dy-7tz">
+                                <rect key="frame" x="142" y="429" width="130" height="38"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="AKY-kd-04B"/>
+                                    <constraint firstAttribute="height" constant="38" id="S0V-QD-Kf0"/>
+                                </constraints>
+                                <state key="normal" title="Generate Dogs!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapToMoveGenerateDogs:" destination="ggT-a6-Ghv" eventType="touchUpInside" id="fXL-uZ-Fd5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgi-xl-7e1">
+                                <rect key="frame" x="92" y="477" width="230" height="38"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="Mbd-ZQ-JXh"/>
+                                    <constraint firstAttribute="height" constant="38" id="f5W-8F-PLZ"/>
+                                </constraints>
+                                <state key="normal" title="My Recently Generated Dogs! ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Dog Generator!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evu-Vf-km5">
+                                <rect key="frame" x="114.5" y="176" width="185" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="UBu-a3-cGo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hfn-8m-cGw"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="evu-Vf-km5" firstAttribute="top" secondItem="Hfn-8m-cGw" secondAttribute="top" constant="88" id="0vZ-sQ-TDE"/>
+                            <constraint firstItem="Jgi-xl-7e1" firstAttribute="centerX" secondItem="bDe-Pp-eWv" secondAttribute="centerX" id="O60-yU-JFD"/>
+                            <constraint firstItem="evu-Vf-km5" firstAttribute="centerX" secondItem="bDe-Pp-eWv" secondAttribute="centerX" id="b1X-lF-XCd"/>
+                            <constraint firstItem="Jgi-xl-7e1" firstAttribute="top" secondItem="IFQ-dy-7tz" secondAttribute="bottom" constant="10" id="m2r-vU-WRL"/>
+                            <constraint firstItem="IFQ-dy-7tz" firstAttribute="centerX" secondItem="bDe-Pp-eWv" secondAttribute="centerX" id="mEL-PS-m0K"/>
+                            <constraint firstItem="IFQ-dy-7tz" firstAttribute="centerY" secondItem="bDe-Pp-eWv" secondAttribute="centerY" id="mbL-Uw-z4Y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2LI-W7-5ft"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NnE-Vx-MhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1259.4202898550725" y="-316.07142857142856"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8662BBFC268C27AA001CC586 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662BBFB268C27AA001CC586 /* APIManager.swift */; };
+		8662BC07268C2961001CC586 /* GetRandomDog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8662BC06268C2961001CC586 /* GetRandomDog.storyboard */; };
+		8662BC09268C2980001CC586 /* GetRandomDogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662BC08268C2980001CC586 /* GetRandomDogsVC.swift */; };
+		8662BC0B268C2B51001CC586 /* GetRandomDogsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662BC0A268C2B51001CC586 /* GetRandomDogsModel.swift */; };
+		8662BC0D268C2FC4001CC586 /* GetRandomDogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662BC0C268C2FC4001CC586 /* GetRandomDogsViewModel.swift */; };
+		8662BC10268C32CF001CC586 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662BC0F268C32CF001CC586 /* LazyImageView.swift */; };
+		8662BC14268C3425001CC586 /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662BC13268C3425001CC586 /* StoryboardHelper.swift */; };
 		869AB87D268B701800874756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AB87C268B701800874756 /* AppDelegate.swift */; };
 		869AB87F268B701800874756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AB87E268B701800874756 /* SceneDelegate.swift */; };
 		869AB881268B701800874756 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AB880268B701800874756 /* ViewController.swift */; };
@@ -35,6 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8662BBFB268C27AA001CC586 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		8662BC06268C2961001CC586 /* GetRandomDog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GetRandomDog.storyboard; sourceTree = "<group>"; };
+		8662BC08268C2980001CC586 /* GetRandomDogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomDogsVC.swift; sourceTree = "<group>"; };
+		8662BC0A268C2B51001CC586 /* GetRandomDogsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomDogsModel.swift; sourceTree = "<group>"; };
+		8662BC0C268C2FC4001CC586 /* GetRandomDogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomDogsViewModel.swift; sourceTree = "<group>"; };
+		8662BC0F268C32CF001CC586 /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
+		8662BC13268C3425001CC586 /* StoryboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
 		869AB879268B701800874756 /* RandomDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		869AB87C268B701800874756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		869AB87E268B701800874756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +90,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8662BBF9268C25D5001CC586 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				8662BBFB268C27AA001CC586 /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		8662BBFA268C2793001CC586 /* LRU */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LRU;
+			sourceTree = "<group>";
+		};
+		8662BBFD268C27D4001CC586 /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				869AB87C268B701800874756 /* AppDelegate.swift */,
+				869AB87E268B701800874756 /* SceneDelegate.swift */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
+		8662BBFE268C2822001CC586 /* MainStoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				869AB882268B701800874756 /* Main.storyboard */,
+			);
+			path = MainStoryBoard;
+			sourceTree = "<group>";
+		};
+		8662BBFF268C28A6001CC586 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				869AB880268B701800874756 /* ViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8662BC00268C28B1001CC586 /* GetRandomDog */ = {
+			isa = PBXGroup;
+			children = (
+				8662BC05268C294C001CC586 /* StoryBoard */,
+				8662BC04268C292D001CC586 /* DataModel */,
+				8662BC03268C2926001CC586 /* ViewModel */,
+				8662BC02268C291B001CC586 /* ViewController */,
+			);
+			path = GetRandomDog;
+			sourceTree = "<group>";
+		};
+		8662BC01268C28CE001CC586 /* Cached */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cached;
+			sourceTree = "<group>";
+		};
+		8662BC02268C291B001CC586 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8662BC08268C2980001CC586 /* GetRandomDogsVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8662BC03268C2926001CC586 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8662BC0C268C2FC4001CC586 /* GetRandomDogsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8662BC04268C292D001CC586 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				8662BC0A268C2B51001CC586 /* GetRandomDogsModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		8662BC05268C294C001CC586 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				8662BC06268C2961001CC586 /* GetRandomDog.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		8662BC0E268C32BB001CC586 /* LazyImageView */ = {
+			isa = PBXGroup;
+			children = (
+				8662BC0F268C32CF001CC586 /* LazyImageView.swift */,
+			);
+			path = LazyImageView;
+			sourceTree = "<group>";
+		};
+		8662BC15268C342C001CC586 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				8662BC13268C3425001CC586 /* StoryboardHelper.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		869AB870268B701800874756 = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +219,15 @@
 		869AB87B268B701800874756 /* RandomDogs */ = {
 			isa = PBXGroup;
 			children = (
-				869AB87C268B701800874756 /* AppDelegate.swift */,
-				869AB87E268B701800874756 /* SceneDelegate.swift */,
-				869AB880268B701800874756 /* ViewController.swift */,
-				869AB882268B701800874756 /* Main.storyboard */,
+				8662BC15268C342C001CC586 /* Story */,
+				8662BC0E268C32BB001CC586 /* LazyImageView */,
+				8662BBFA268C2793001CC586 /* LRU */,
+				8662BBF9268C25D5001CC586 /* APIManager */,
+				8662BC01268C28CE001CC586 /* Cached */,
+				8662BC00268C28B1001CC586 /* GetRandomDog */,
+				8662BBFF268C28A6001CC586 /* Home */,
+				8662BBFE268C2822001CC586 /* MainStoryBoard */,
+				8662BBFD268C27D4001CC586 /* Appdelegate */,
 				869AB885268B701900874756 /* Assets.xcassets */,
 				869AB887268B701900874756 /* LaunchScreen.storyboard */,
 				869AB88A268B701900874756 /* Info.plist */,
@@ -232,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				869AB889268B701900874756 /* LaunchScreen.storyboard in Resources */,
+				8662BC07268C2961001CC586 /* GetRandomDog.storyboard in Resources */,
 				869AB886268B701900874756 /* Assets.xcassets in Resources */,
 				869AB884268B701800874756 /* Main.storyboard in Resources */,
 			);
@@ -258,9 +384,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8662BC14268C3425001CC586 /* StoryboardHelper.swift in Sources */,
+				8662BBFC268C27AA001CC586 /* APIManager.swift in Sources */,
 				869AB881268B701800874756 /* ViewController.swift in Sources */,
+				8662BC0B268C2B51001CC586 /* GetRandomDogsModel.swift in Sources */,
 				869AB87D268B701800874756 /* AppDelegate.swift in Sources */,
+				8662BC10268C32CF001CC586 /* LazyImageView.swift in Sources */,
+				8662BC09268C2980001CC586 /* GetRandomDogsVC.swift in Sources */,
 				869AB87F268B701800874756 /* SceneDelegate.swift in Sources */,
+				8662BC0D268C2FC4001CC586 /* GetRandomDogsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
