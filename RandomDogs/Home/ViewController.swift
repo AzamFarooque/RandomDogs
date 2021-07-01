@@ -14,12 +14,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapToMoveGenerateDogs(_ sender: UIButton) {
-        
         let storyboard = UIStoryboard(storyboard: .GetRandomDog)
         let getRandomDogsVC : GetRandomDogsVC = storyboard.instantiateViewController()
         self.navigationController?.pushViewController(getRandomDogsVC, animated: true)
         
     }
    
+    @IBAction func didTapToSeeRecentlyGeneratedDogs(_ sender: UIButton) {
+        let storyboard = UIStoryboard(storyboard: .RecentlyGeneratedDog)
+        let getRandomDogsVC : RecentlyGeneratedDogVC = storyboard.instantiateViewController()
+        self.navigationController?.pushViewController(getRandomDogsVC, animated: true)
+    }
 }
 

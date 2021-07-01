@@ -34,7 +34,11 @@ class LazyImageView: UIImageView
                 {
                     DispatchQueue.main.async {
                         self!.imageCache.setObject(image, forKey: imageURL as AnyObject)
+                        
+                       let cache = LRU()
+                        cache.add(data: imageData)
                         self?.image = image
+                       
                     }
                 }
             }

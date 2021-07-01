@@ -55,6 +55,9 @@
                                 <state key="normal" title="My Recently Generated Dogs! ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapToSeeRecentlyGeneratedDogs:" destination="ggT-a6-Ghv" eventType="touchUpInside" id="YEJ-Yp-Yzh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Dog Generator!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evu-Vf-km5">
                                 <rect key="frame" x="114.5" y="176" width="185" height="21"/>
