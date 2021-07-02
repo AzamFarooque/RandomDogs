@@ -11,7 +11,6 @@ import Foundation
 
 
 struct StringConstants {
-    
     static let GenerateDogsText = "Generate Dogs!"
     static let RecentlyGeneratedDogsText = "My Recently Generated Dogs!"
     

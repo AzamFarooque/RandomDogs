@@ -28,7 +28,7 @@
 		869AB889268B701900874756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 869AB887268B701900874756 /* LaunchScreen.storyboard */; };
 		869AB894268B701900874756 /* RandomDogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AB893268B701900874756 /* RandomDogsTests.swift */; };
 		869AB89F268B701A00874756 /* RandomDogsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AB89E268B701A00874756 /* RandomDogsUITests.swift */; };
-		86F63492268D7481009AE066 /* LRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F63491268D7481009AE066 /* LRU.swift */; };
+		86F63492268D7481009AE066 /* LRUHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F63491268D7481009AE066 /* LRUHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		869AB89A268B701900874756 /* RandomDogsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomDogsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		869AB89E268B701A00874756 /* RandomDogsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDogsUITests.swift; sourceTree = "<group>"; };
 		869AB8A0268B701A00874756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86F63491268D7481009AE066 /* LRU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRU.swift; sourceTree = "<group>"; };
+		86F63491268D7481009AE066 /* LRUHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 		8662BBFA268C2793001CC586 /* LRUCache */ = {
 			isa = PBXGroup;
 			children = (
-				86F63491268D7481009AE066 /* LRU.swift */,
+				86F63491268D7481009AE066 /* LRUHandler.swift */,
 			);
 			path = LRUCache;
 			sourceTree = "<group>";
@@ -287,13 +287,13 @@
 		869AB87B268B701800874756 /* RandomDogs */ = {
 			isa = PBXGroup;
 			children = (
-				867A6DFA268EEF04004C48CD /* Extension */,
 				8662BBFD268C27D4001CC586 /* Appdelegate */,
+				8662BBF9268C25D5001CC586 /* APIManager */,
+				867A6DFA268EEF04004C48CD /* Extension */,
 				86936D1E268DE1DB0042AFE4 /* Constant */,
 				8662BC15268C342C001CC586 /* StoryBoard */,
 				8662BC0E268C32BB001CC586 /* LazyImageView */,
 				8662BBFA268C2793001CC586 /* LRUCache */,
-				8662BBF9268C25D5001CC586 /* APIManager */,
 				8662BC01268C28CE001CC586 /* RecentlyGeneratedDog */,
 				8662BC00268C28B1001CC586 /* GetRandomDog */,
 				8662BBFF268C28A6001CC586 /* Home */,
@@ -459,7 +459,7 @@
 				86936D20268DE1EB0042AFE4 /* StringConstant.swift in Sources */,
 				8662BBFC268C27AA001CC586 /* APIManager.swift in Sources */,
 				869AB881268B701800874756 /* ViewController.swift in Sources */,
-				86F63492268D7481009AE066 /* LRU.swift in Sources */,
+				86F63492268D7481009AE066 /* LRUHandler.swift in Sources */,
 				8662BC0B268C2B51001CC586 /* GetRandomDogsModel.swift in Sources */,
 				86936D1C268DE0F10042AFE4 /* RecentlyGeneratedDogsCollectionViewCell.swift in Sources */,
 				86936D19268DE0C70042AFE4 /* RecentlyGeneratedDogVC.swift in Sources */,
