@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - RandomDog Model
+
 struct GetRandomDogsModel : Decodable {
     var message : String?
     var status : String?

@@ -11,9 +11,11 @@ typealias onCompletion = (Bool, String?) -> Void
 
 class GetRandomDogsViewModel {
     
-    // MARK: - GetRandomDogsModel Model Instance.
+    // MARK: - GetRandomDogsModel Model Instance
     var dataSource : GetRandomDogsModel!
     
+    
+    // MARK: - Delegating To Service Layer To Fetch Random Dogs
     
     func getRandomDogs(inUrl : String , completionBlock : @escaping onCompletion){
         APIManager.sharedInstance.getAPiData(requestURL: URL(string: inUrl)!, resultType: GetRandomDogsModel.self) { [weak self] (data, error) in

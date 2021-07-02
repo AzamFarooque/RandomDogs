@@ -6,38 +6,57 @@ import Foundation
 protocol ImageStorge{
     func setData(_ value: Any, key: String)
     func getData(key: String) -> [UIImage]?
-    func removeDogs()
+    func removeData()
 }
 
 class LRUHandler  {
     
+    private let _imageStorge : ImageStorge
     var lruImageData : [UIImage] = []
     var max :  Int?
     
-    init (max : Int){
+    init (max : Int , _imageStorge : ImageStorge){
         self.max = max
-        
+        self._imageStorge = _imageStorge
     }
     
-    func add(data : UIImage){
-        lruImageData = SettingsArchiver.getData(key: PrefKey.cacheList) ?? []
-        lruImageData += [data]
+    // MARK: Add Dog Image In List
+    
+    func addDogs(image : UIImage){
+        lruImageData = _imageStorge.getData(key: PrefKey.cacheList) ?? []
+        lruImageData += [image]
         if lruImageData.count > max ?? 0 {
             lruImageData.removeFirst()
         }
-        SettingsArchiver.setData(lruImageData, key: PrefKey.cacheList)
+        _imageStorge.setData(lruImageData, key: PrefKey.cacheList)
+    }
+    
+    // MARK: Get Dog List
+    
+    func getDogsList() -> [UIImage]?{
+        return  _imageStorge.getData(key: PrefKey.cacheList)
+    }
+    
+    // MARK: Remove Dog List
+    
+    func removeDogsList() {
+        _imageStorge.removeData()
     }
 }
 
-final class SettingsArchiver   {
+class SettingsArchiver : ImageStorge  {
     
-    static func setData(_ value: Any, key: String) {
+    // MARK: - Storing Data
+    
+    func setData(_ value: Any, key: String) {
         let ud = UserDefaults.standard
         let archivedPool = try? NSKeyedArchiver.archivedData(withRootObject: value, requiringSecureCoding: true)
         ud.set(archivedPool, forKey: key)
     }
     
-    static func getData(key: String) -> [UIImage]? {
+    // MARK: - Retrive Data
+    
+    func getData(key: String) -> [UIImage]? {
         let ud = UserDefaults.standard
         if let val = ud.value(forKey: key) as? Data,
            let obj = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(val) as? [UIImage] {
@@ -46,7 +65,9 @@ final class SettingsArchiver   {
         return nil
     }
     
-    static func removeDogs(){
+    // MARK: - Remove Data
+    
+    func removeData(){
         let ud = UserDefaults.standard
         ud.removeObject(forKey: PrefKey.cacheList)
         ud.synchronize()

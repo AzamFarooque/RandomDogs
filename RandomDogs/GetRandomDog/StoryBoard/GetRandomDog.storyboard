@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4av-nf-JsG" customClass="LazyImageView" customModule="RandomDogs" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="4av-nf-JsG" customClass="LazyImageView" customModule="RandomDogs" customModuleProvider="target">
                                 <rect key="frame" x="20" y="64" width="374" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="iFk-Er-Enk"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-mX-O7w">
-                                <rect key="frame" x="147" y="511" width="120" height="30"/>
+                                <rect key="frame" x="147" y="533" width="120" height="30"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wV1-u8-KJG"/>
@@ -45,18 +45,29 @@
                                     <action selector="didTapToGenerateDogs:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UUi-G2-GPI"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="G2T-zK-bI8">
+                                <rect key="frame" x="197" y="179" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="NF5-1v-goC"/>
+                                    <constraint firstAttribute="width" constant="20" id="TdW-N4-apj"/>
+                                </constraints>
+                                <color key="color" systemColor="systemGreenColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qZa-mX-O7w" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="78" id="1vg-k5-0S6"/>
+                            <constraint firstItem="qZa-mX-O7w" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="100" id="1vg-k5-0S6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4av-nf-JsG" secondAttribute="trailing" constant="20" id="3ED-5n-nlC"/>
+                            <constraint firstItem="G2T-zK-bI8" firstAttribute="centerY" secondItem="4av-nf-JsG" secondAttribute="centerY" id="GMH-7W-z3J"/>
+                            <constraint firstItem="G2T-zK-bI8" firstAttribute="centerX" secondItem="4av-nf-JsG" secondAttribute="centerX" id="XLN-fZ-xA1"/>
                             <constraint firstItem="qZa-mX-O7w" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="p1y-YC-kED"/>
                             <constraint firstItem="4av-nf-JsG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="tU0-le-ghi"/>
                             <constraint firstItem="4av-nf-JsG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="xRM-kV-dLx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="G2T-zK-bI8" id="Ow5-ho-cht"/>
                         <outlet property="randomDogsImgView" destination="4av-nf-JsG" id="gro-gs-SaF"/>
                     </connections>
                 </viewController>
@@ -66,8 +77,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dogPlaceHolder" width="112" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

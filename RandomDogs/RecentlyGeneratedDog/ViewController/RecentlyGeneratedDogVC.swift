@@ -8,10 +8,14 @@
 import UIKit
 
 class RecentlyGeneratedDogVC: UIViewController {
+    // MARK: - CollectionView Instance Intialise.
     @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: - LRUHandler Instance Intialise.
+    let cache = LRUHandler(max: 20, _imageStorge: SettingsArchiver())
+    // MARK: - LRU List Instance Intialise.
     var lruImageData : [UIImage] = []
     
-  
+    // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +24,24 @@ class RecentlyGeneratedDogVC: UIViewController {
             layout.scrollDirection = .horizontal
         }
         
-        
-        if let lru =  SettingsArchiver.getData(key: PrefKey.cacheList){
+        if let lru =  cache.getDogsList(){
             self.lruImageData = lru
             self.lruImageData = self.lruImageData.reversed()
             registerCell()
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            collectionView.reloadData()
+            collectionReload()
+            
         }
     }
+    
+    // MARK: - CollectionView Reload
+    
+    func collectionReload(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.reloadData()
+    }
+    
+    // MARK: - ViewWillAppear
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,15 +49,19 @@ class RecentlyGeneratedDogVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
+    // MARK: - Register Collection Cell
+    
     private func registerCell() {
         let nib = UINib(nibName: RecentlyGeneratedDogsCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: RecentlyGeneratedDogsCollectionViewCell.identifier)
         
     }
     
+    // MARK: - Clear Dog List
+    
     @IBAction func didTapToClearDogs(_ sender: Any) {
-        SettingsArchiver.removeDogs()
-        self.lruImageData = SettingsArchiver.getData(key: PrefKey.cacheList) ?? []
+        cache.removeDogsList()
+        self.lruImageData = cache.getDogsList() ?? []
         collectionView.reloadData()
         
     }

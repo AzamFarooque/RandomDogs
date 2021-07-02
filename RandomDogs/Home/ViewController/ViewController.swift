@@ -8,18 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var recentlyGeneratedDogButton: UIButton!
-    @IBOutlet weak var generateDogButton: UIButton!
-   
+    
+    // MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
     }
+    
+    // MARK: - ViewWillAppear
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
+    
+    // MARK: - User Tap To Generate Dog Image From Server
     
     @IBAction func didTapToMoveGenerateDogs(_ sender: UIButton) {
         let storyboard = UIStoryboard(storyboard: .GetRandomDog)
@@ -28,6 +32,9 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(getRandomDogsVC, animated: true)
         
     }
+    
+    
+    // MARK: - User Tap To See Least Recently Used Dog Image
     
     @IBAction func didTapToSeeRecentlyGeneratedDogs(_ sender: UIButton) {
         let storyboard = UIStoryboard(storyboard: .RecentlyGeneratedDog)

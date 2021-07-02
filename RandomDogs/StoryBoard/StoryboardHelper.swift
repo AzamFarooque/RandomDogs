@@ -1,10 +1,10 @@
 //
-//  FlickerAPIManager.swift
-//  FlickerApp
+//  ConstantFile.swift
+//  RandomDogs
 //
-//  Created by Happlabs Software LLP MAC1 on 15/03/19.
-//  Copyright © 2019 Flicker. All rights reserved.
+//  Created by Farooque Azam on 01/07/21.
 //
+
 import UIKit
 
 extension UIStoryboard {
