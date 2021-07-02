@@ -9,12 +9,21 @@ import UIKit
 
 class RecentlyGeneratedDogVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    var lruImageData : [Data] = []
+    var lruImageData : [UIImage] = []
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumInteritemSpacing = 10
+            layout.scrollDirection = .horizontal
+        }
         
-        if let lru = UserDefaults.standard.value(forKey: "SavedImageData") as? [Data] {
+        
+        if let lru =  SettingsArchiver.getData(key: PrefKey.cacheList){
             self.lruImageData = lru
+            self.lruImageData = self.lruImageData.reversed()
             registerCell()
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -22,13 +31,27 @@ class RecentlyGeneratedDogVC: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title  = StringConstants.RecentlyGeneratedDogsText
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     private func registerCell() {
         let nib = UINib(nibName: RecentlyGeneratedDogsCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: RecentlyGeneratedDogsCollectionViewCell.identifier)
         
     }
+    
+    @IBAction func didTapToClearDogs(_ sender: Any) {
+        SettingsArchiver.removeDogs()
+        self.lruImageData = SettingsArchiver.getData(key: PrefKey.cacheList) ?? []
+        collectionView.reloadData()
+        
+    }
 }
 
+// MARK: - CollectionView Delefate And DataSources
 
 extension RecentlyGeneratedDogVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -39,14 +62,14 @@ extension RecentlyGeneratedDogVC: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentlyGeneratedDogsCollectionViewCell.identifier, for: indexPath) as! RecentlyGeneratedDogsCollectionViewCell
-        cell.recentDogImgView.image = UIImage(data: lruImageData[indexPath.row])
+        cell.recentDogImgView.image = lruImageData[indexPath.row]
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.frame.size.width , height: 156)
+        return CGSize(width: self.view.frame.size.width - 32 , height: 300)
     }
-    
 }
 

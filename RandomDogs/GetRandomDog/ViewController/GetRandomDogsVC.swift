@@ -19,6 +19,12 @@ class GetRandomDogsVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title  = StringConstants.GenerateDogsText
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     @IBAction func didTapToGenerateDogs(_ sender: UIButton) {
         
         self.fetchRandomDogs()
@@ -26,7 +32,7 @@ class GetRandomDogsVC: UIViewController {
     // MARK: - Fetching random dogs
     
     func fetchRandomDogs(){
-        viewModel.getRandomDogs(inUrl : "https://dog.ceo/api/breeds/image/random") { [weak self] (success, error) in
+        viewModel.getRandomDogs(inUrl : API.GetRandomDogImageURL) { [weak self] (success, error) in
             if success {
                 DispatchQueue.main.async{
                     self?.randomDogsImgView.loadImage(fromURL: URL(string : self?.viewModel.dataSource.message ?? "")!, placeHolderImage: "")

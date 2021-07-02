@@ -32,29 +32,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFQ-dy-7tz">
-                                <rect key="frame" x="142" y="429" width="130" height="38"/>
-                                <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="142" y="433" width="130" height="30"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="AKY-kd-04B"/>
-                                    <constraint firstAttribute="height" constant="38" id="S0V-QD-Kf0"/>
+                                    <constraint firstAttribute="height" constant="30" id="S0V-QD-Kf0"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                 <state key="normal" title="Generate Dogs!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapToMoveGenerateDogs:" destination="ggT-a6-Ghv" eventType="touchUpInside" id="fXL-uZ-Fd5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgi-xl-7e1">
-                                <rect key="frame" x="92" y="477" width="230" height="38"/>
-                                <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="92" y="473" width="230" height="30"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="Mbd-ZQ-JXh"/>
-                                    <constraint firstAttribute="height" constant="38" id="f5W-8F-PLZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="f5W-8F-PLZ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                 <state key="normal" title="My Recently Generated Dogs! ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapToSeeRecentlyGeneratedDogs:" destination="ggT-a6-Ghv" eventType="touchUpInside" id="YEJ-Yp-Yzh"/>
                                 </connections>
@@ -80,7 +98,13 @@
                             <constraint firstItem="IFQ-dy-7tz" firstAttribute="centerY" secondItem="bDe-Pp-eWv" secondAttribute="centerY" id="mbL-Uw-z4Y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2LI-W7-5ft"/>
+                    <navigationItem key="navigationItem" id="2LI-W7-5ft">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="V9t-7s-9rr"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="generateDogButton" destination="IFQ-dy-7tz" id="kSb-Zw-6QU"/>
+                        <outlet property="recentlyGeneratedDogButton" destination="Jgi-xl-7e1" id="8XK-fb-HER"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnE-Vx-MhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
